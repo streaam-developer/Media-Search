@@ -12,7 +12,7 @@ else:
     from info import SESSION, API_ID, API_HASH, BOT_TOKEN, AUTH_USERS_2
 
 
-from pyrogram import Client, __version__
+from pyrogram import Client, __version__, filters
 from pyrogram.raw.all import layer
 from utils import Media
 import pyromod.listen
