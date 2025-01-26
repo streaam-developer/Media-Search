@@ -7,16 +7,18 @@ id_pattern = re.compile(r'^.\d+$')
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ['API_ID'])
-API_HASH = environ['API_HASH']
-BOT_TOKEN = environ['BOT_TOKEN']
+API_ID = int(environ.get('API_ID', '904789'))
+API_HASH = environ.get('API_HASH', '2262ef67ced426b9eea57867b11666a1')
+BOT_TOKEN = environ.get('BOT_TOKEN', "5120091936:AAGX5L29-BRpyA_mv7j-A60h_e8jvZF0JgM")
+BOT_USERNAME = environ.get('BOT_USERNAME', 'ipapcornbot')
+
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '622730585 1003337276 5414689790 5059740089 5739623984 6924888856').split()]]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS'].split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
@@ -27,14 +29,14 @@ AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
 
 
 # MongoDB information
-DATABASE_URI = environ['DATABASE_URI']
-DATABASE_NAME = environ['DATABASE_NAME']
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://cinihe6110:n9md7VCwteiuzgC8@cluster0.d8aqy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")   # IF Multiple Database Is False Then Fill Only This Database Url.
+DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'sampless')
 SAVE_USER = os.environ.get("SAVE_USER", "no").lower()
 HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", "")
 DATABASE_NAME_2 = str(os.environ.get("DATABASE_NAME_2", "Cluster0"))
 AUTH_USERS_2 = set(str(x) for x in os.environ.get("AUTH_USERS_2", "").split())
-DATABASE_URI_2 = os.environ.get("DATABASE_URI_2", "")
+DATABASE_URI_2 = os.environ.get("DATABASE_URI_2", "mongodb+srv://cinihe6110:n9md7VCwteiuzgC8@cluster0.d8aqy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 
 # Manual Filter Commands 😁
