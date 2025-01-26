@@ -42,7 +42,7 @@ class Bot(Client):
         await super().stop()
         print("Bot stopped. 𝔹𝕐𝔼.")
 
-@bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
+@client.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
