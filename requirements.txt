@@ -4,7 +4,7 @@ pymongo[srv]
 motor
 marshmallow
 umongo
-pyromod
+pyrofork
 requests
 parse-torrent-name
 heroku3
